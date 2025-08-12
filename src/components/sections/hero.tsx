@@ -38,8 +38,9 @@ export function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
+              variant="payment"
               size="lg" 
-              className="bg-payment-gradient hover:opacity-90 transition-all duration-300 text-lg px-8 py-6 shadow-trust-glow"
+              className="text-lg px-8 py-6 shadow-trust-glow font-semibold"
             >
               🚀 Get Started Today
             </Button>

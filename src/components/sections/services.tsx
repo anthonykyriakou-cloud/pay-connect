@@ -108,7 +108,10 @@ export function Services() {
                   <span className="text-muted-foreground">Security & compliance review</span>
                 </li>
               </ul>
-              <Button className="bg-payment-gradient hover:opacity-90 transition-all">
+              <Button 
+                variant="payment"
+                className="font-semibold"
+              >
                 📞 Book Free Audit
               </Button>
             </div>

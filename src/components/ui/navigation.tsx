@@ -39,8 +39,8 @@ export function Navigation({ className }: NavigationProps) {
               </a>
             ))}
             <Button 
-              variant="default" 
-              className="bg-payment-gradient hover:opacity-90 transition-opacity"
+              variant="payment" 
+              className="font-semibold"
             >
               📞 Book Consultation
             </Button>
@@ -77,8 +77,8 @@ export function Navigation({ className }: NavigationProps) {
                 </a>
               ))}
               <Button 
-                variant="default" 
-                className="w-full bg-payment-gradient hover:opacity-90"
+                variant="payment" 
+                className="w-full font-semibold"
                 onClick={() => setIsMenuOpen(false)}
               >
                 📞 Book Consultation

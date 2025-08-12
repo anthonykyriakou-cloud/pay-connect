@@ -106,7 +106,8 @@ export function Contact() {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-payment-gradient hover:opacity-90 transition-all"
+                  variant="payment"
+                  className="w-full font-semibold"
                 >
                   🚀 Send Message
                 </Button>
@@ -169,7 +170,8 @@ export function Contact() {
                       Click below to access the calendar and book your preferred time slot
                     </p>
                     <Button 
-                      className="bg-payment-gradient hover:opacity-90"
+                      variant="payment"
+                      className="font-semibold"
                       onClick={() => window.open('https://calendly.com', '_blank')}
                     >
                       🗓️ Open Calendar
