@@ -1,0 +1,10 @@
+{
+    "app": {
+        "name": "PayConnect",
+        "description": "PayConnect est une plateforme de traitement de paiements qui vous permet d'accepter des paiements en ligne.",
+        "hero": {
+            "title": "Simplifiez Votre Parcours de Paiement",
+            "description": "Conseils d'experts pour les entreprises recherchant des solutions de traitement de paiements fiables, sécurisées et efficaces. Transformons vos défis de paiement en avantages concurrentiels. ��✨"
+        }
+    }
+}

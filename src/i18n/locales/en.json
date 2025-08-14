@@ -1,0 +1,10 @@
+{
+    "app": {
+        "name": "PayConnect",
+        "description": "PaymentPro is a payment processing platform that allows you to accept payments online.",
+        "hero": {
+            "title": "Simplify Your Payment Journey",
+            "description": "Expert guidance for businesses seeking reliable, secure, and efficient payment processing solutions. Let's transform your payment challenges into competitive advantages. 💳✨"
+        }
+    }
+}
