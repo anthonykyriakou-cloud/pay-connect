@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-payment-advisor.jpg";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
   return (
     <section className="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden">
       {/* Background Image with Overlay */}
@@ -26,14 +28,11 @@ export function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Simplify Your
-            <span className="text-transparent bg-payment-gradient bg-clip-text"> Payment </span>
-            Journey
+            {t('app.hero.title')}
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-            Expert guidance for businesses seeking reliable, secure, and efficient payment processing solutions. 
-            Let's transform your payment challenges into competitive advantages. 💳✨
+            {t('app.hero.description')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
