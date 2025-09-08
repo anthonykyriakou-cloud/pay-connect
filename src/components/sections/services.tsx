@@ -18,12 +18,15 @@ import visa from "@/assets/visa.svg";
 import mastercard from "@/assets/mastercard.svg";
 import sepa from "@/assets/sepa.svg";
 import swift from "@/assets/swift.svg";
-import upi from "@/assets/upi.png";
+import upi from "@/assets/upi.svg";
 import Bitcoin from "@/assets/bitcoin.svg";
 import usdt from "@/assets/usdt.svg";
 import euro from "@/assets/euro.svg";
 import dollar from "@/assets/dollar.svg";
 import sterling from "@/assets/sterling.svg";
+import skrill from "@/assets/skrill.svg";
+import blik from "@/assets/blik.svg";
+import openbanking from "@/assets/open-banking.svg";
 
 export function Services() {
   const { t } = useTranslation();
@@ -41,13 +44,13 @@ export function Services() {
       bulletPoints: t("app.services.bankingSolutionsBulletPoints", {
         returnObjects: true,
       }),
-      methods: [sepa, swift],
+      methods: [swift, sepa],
     },
     {
       icon: HandCoins,
       title: t("app.services.alternativePaymentMethods"),
       description: t("app.services.alternativePaymentMethodsDescription"),
-      methods: [upi],
+      methods: [upi, openbanking, skrill, blik],
     },
     {
       icon: TrendingUp,
@@ -56,7 +59,7 @@ export function Services() {
       bulletPoints: t("app.services.onAndOffRampServicesBulletPoints", {
         returnObjects: true,
       }),
-      methods: [euro, dollar, sterling, Bitcoin, usdt],
+      methods: [euro, dollar, sterling, usdt, Bitcoin],
     },
     {
       icon: Scale,
@@ -88,7 +91,7 @@ export function Services() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 shadow-soft shadow-primary"
+              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 shadow-soft shadow-primary flex flex-col h-full"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader className="space-y-4">
@@ -97,7 +100,7 @@ export function Services() {
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <CardDescription className="text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
@@ -114,18 +117,25 @@ export function Services() {
                       ))}
                     </ul>
                   )}
+
+                <div className="flex-1"></div>
+
                 {service.methods && (
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/50">
-                    <div className="flex items-center gap-2">
-                      {service.methods.map((method, methodIndex) => (
-                        <img
-                          key={methodIndex}
-                          src={method}
-                          alt={method}
-                          className={index === 0 ? "w-10 h-10" : index === 3 ? "w-8 h-8" : "w-12 h-12"}
-                        />
-                      ))}
-                    </div>
+                  <div className="flex gap-4">
+                    {service.methods.map((method, methodIndex) => (
+                      <img
+                        key={methodIndex}
+                        src={method}
+                        alt={method}
+                        className={
+                          index === 0
+                            ? "w-12 h-12"
+                            : index === 3
+                            ? "w-12 h-12"
+                            : "w-16 h-16"
+                        }
+                      />
+                    ))}
                   </div>
                 )}
               </CardContent>

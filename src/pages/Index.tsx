@@ -1,7 +1,8 @@
 import { Navigation } from "@/components/ui/navigation";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
-import { Contact } from "@/components/sections/contact";
+import ContactForm from "@/components/sections/contact";
+import CalendarIntegration from "@/components/sections/calendar-integration";
 import { Footer } from "@/components/sections/footer";
 import { LanguageProvider } from "@/providers/languages/LanguageContext";
 
@@ -12,7 +13,8 @@ const Index = () => {
         <Navigation />
         <Hero />
         <Services />
-        <Contact />
+        <CalendarIntegration />
+        <ContactForm />
         <Footer />
       </div>
     </LanguageProvider>

@@ -1,216 +1,198 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
-export function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
+const ContactForm = () => {
   const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    contactName: "",
+    contactEmail: "",
+    telegramWhatsapp: "",
+    url: "",
+    license: "",
+    targetCountries: "",
+    monthlyVolume: "",
+    yearsOperation: "",
+    servicesInterested: ""
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
+    
+    // Create mailto link with form data
+    const subject = "Payment Solutions Inquiry";
+    const body = `
+Contact Name: ${formData.contactName}
+Contact Email: ${formData.contactEmail}
+Telegram/WhatsApp: ${formData.telegramWhatsapp}
+URL: ${formData.url}
+License: ${formData.license}
+Target Countries: ${formData.targetCountries}
+Monthly Volume: ${formData.monthlyVolume}
+Years of Operation: ${formData.yearsOperation}
+Services Interested In: ${formData.servicesInterested}
+    `.trim();
+    
+    const mailtoLink = `mailto:contact@paymentsolutions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+    
     toast({
-      title: "Message sent! 🎉",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      title: "Form Submitted",
+      description: "Your email client will open with the pre-filled information.",
     });
-    setFormData({ name: '', email: '', company: '', message: '' });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [field]: value
     }));
   };
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl">📞</span>
-            <span className="text-payment-success font-semibold">Get In Touch</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Ready to Optimize Your Payments?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Let's discuss your payment challenges and find the perfect solution for your business 💪
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <Card className="bg-card-gradient border-border">
-            <CardHeader>
-              <CardTitle className="text-foreground flex items-center gap-2">
-                ✉️ Send a Message
-              </CardTitle>
+    <section className="py-24 bg-gradient-subtle">
+      <div className="container mx-auto px-6">
+        <div className="max-w-2xl mx-auto">
+          <Card className="shadow-elegant border-0">
+            <CardHeader className="text-center space-y-4">
+              <CardTitle className="text-3xl">Get Your Free Consultation</CardTitle>
+              <CardDescription className="text-lg">
+                Tell us about your business and we'll provide tailored payment solutions
+              </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-6">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-foreground">Name *</label>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="contactName">Contact Name *</Label>
                     <Input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="John Smith"
+                      id="contactName"
                       required
-                      className="bg-muted border-border"
+                      value={formData.contactName}
+                      onChange={(e) => handleChange("contactName", e.target.value)}
+                      className="h-12"
                     />
                   </div>
-                  <div>
-                    <label className="text-sm font-medium text-foreground">Email *</label>
+                  <div className="space-y-2">
+                    <Label htmlFor="contactEmail">Contact Email *</Label>
                     <Input
-                      name="email"
+                      id="contactEmail"
                       type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="john@company.com"
                       required
-                      className="bg-muted border-border"
+                      value={formData.contactEmail}
+                      onChange={(e) => handleChange("contactEmail", e.target.value)}
+                      className="h-12"
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground">Company</label>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="telegramWhatsapp">Telegram/WhatsApp</Label>
+                    <Input
+                      id="telegramWhatsapp"
+                      value={formData.telegramWhatsapp}
+                      onChange={(e) => handleChange("telegramWhatsapp", e.target.value)}
+                      className="h-12"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="url">Website URL</Label>
+                    <Input
+                      id="url"
+                      type="url"
+                      value={formData.url}
+                      onChange={(e) => handleChange("url", e.target.value)}
+                      className="h-12"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="license">License Information</Label>
                   <Input
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder="Your Company Name"
-                    className="bg-muted border-border"
+                    id="license"
+                    value={formData.license}
+                    onChange={(e) => handleChange("license", e.target.value)}
+                    className="h-12"
                   />
                 </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground">Message *</label>
+
+                <div className="space-y-2">
+                  <Label htmlFor="targetCountries">Target Countries</Label>
+                  <Input
+                    id="targetCountries"
+                    placeholder="e.g., USA, UK, Germany"
+                    value={formData.targetCountries}
+                    onChange={(e) => handleChange("targetCountries", e.target.value)}
+                    className="h-12"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="monthlyVolume">Monthly Volume</Label>
+                    <Select onValueChange={(value) => handleChange("monthlyVolume", value)}>
+                      <SelectTrigger className="h-12">
+                        <SelectValue placeholder="Select monthly volume" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="under-10k">Under $10,000</SelectItem>
+                        <SelectItem value="10k-50k">$10,000 - $50,000</SelectItem>
+                        <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
+                        <SelectItem value="100k-500k">$100,000 - $500,000</SelectItem>
+                        <SelectItem value="500k-1m">$500,000 - $1,000,000</SelectItem>
+                        <SelectItem value="over-1m">Over $1,000,000</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="yearsOperation">Years of Operation</Label>
+                    <Select onValueChange={(value) => handleChange("yearsOperation", value)}>
+                      <SelectTrigger className="h-12">
+                        <SelectValue placeholder="Select years" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="startup">Startup (Less than 1 year)</SelectItem>
+                        <SelectItem value="1-2">1-2 years</SelectItem>
+                        <SelectItem value="3-5">3-5 years</SelectItem>
+                        <SelectItem value="5-10">5-10 years</SelectItem>
+                        <SelectItem value="over-10">Over 10 years</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="servicesInterested">Services You Are Interested In</Label>
                   <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Tell me about your payment processing needs..."
-                    rows={4}
-                    required
-                    className="bg-muted border-border"
+                    id="servicesInterested"
+                    placeholder="Please describe the payment solutions you need..."
+                    value={formData.servicesInterested}
+                    onChange={(e) => handleChange("servicesInterested", e.target.value)}
+                    className="min-h-[120px] resize-none"
                   />
                 </div>
+
                 <Button 
                   type="submit" 
-                  variant="payment"
-                  className="w-full font-semibold"
+                  size="lg" 
+                  className="w-full shadow-elegant hover:shadow-lg transition-all duration-300"
                 >
-                  🚀 Send Message
+                  Submit Inquiry
                 </Button>
               </form>
             </CardContent>
           </Card>
-
-          {/* Contact Info & Calendly */}
-          <div className="space-y-8">
-            {/* Quick Contact */}
-            <Card className="bg-card-gradient border-border">
-              <CardHeader>
-                <CardTitle className="text-foreground flex items-center gap-2">
-                  📱 Quick Contact
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">📧</span>
-                  <div>
-                    <p className="font-medium text-foreground">Email</p>
-                    <p className="text-muted-foreground">hello@paymentpro.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">📞</span>
-                  <div>
-                    <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">⏰</span>
-                  <div>
-                    <p className="font-medium text-foreground">Business Hours</p>
-                    <p className="text-muted-foreground">Mon-Fri: 9AM-6PM EST</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Calendly Integration */}
-            <Card className="bg-card-gradient border-border">
-              <CardHeader>
-                <CardTitle className="text-foreground flex items-center gap-2">
-                  📅 Book a Consultation
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Schedule a free 30-minute consultation to discuss your payment processing needs.
-                </p>
-                
-                {/* Calendly Embed Placeholder */}
-                <div className="bg-muted rounded-lg p-8 text-center border border-border">
-                  <div className="space-y-4">
-                    <span className="text-4xl">📅</span>
-                    <h3 className="text-lg font-semibold text-foreground">Schedule Your Free Consultation</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Click below to access the calendar and book your preferred time slot
-                    </p>
-                    <Button 
-                      variant="payment"
-                      className="font-semibold"
-                      onClick={() => window.open('https://calendly.com', '_blank')}
-                    >
-                      🗓️ Open Calendar
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="mt-4 text-xs text-muted-foreground">
-                  💡 Tip: Have your current payment processor statements ready for a more productive discussion
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Trust Indicators */}
-            <Card className="bg-card-gradient border-border">
-              <CardContent className="pt-6">
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-payment-success">5+</div>
-                    <div className="text-sm text-muted-foreground">Years Experience</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-payment-success">100+</div>
-                    <div className="text-sm text-muted-foreground">Happy Clients</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-payment-success">24/7</div>
-                    <div className="text-sm text-muted-foreground">Support</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-payment-success">99%</div>
-                    <div className="text-sm text-muted-foreground">Success Rate</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default ContactForm;
