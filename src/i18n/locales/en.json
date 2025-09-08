@@ -1,10 +1,10 @@
 {
     "app": {
-        "name": "PayConnect",
+        "name": "KeyConnections",
         "description": "PaymentPro is a payment processing platform that allows you to accept payments online.",
         "hero": {
-            "title": "Simplify Your Payment Journey",
-            "description": "Expert guidance for businesses seeking reliable, secure, and efficient payment processing solutions. Let's transform your payment challenges into competitive advantages. 💳✨"
+            "title": "Who we are?",
+            "description": "A consultancy designed to connect you with the desired solution that you are looking for.  At KeyConnections, we understand the difficulties and challenges faced when choosing a Payment or Banking provider. Choosing the right provider can be overwhelming, and we’re here to guide you every step of the way."
         }
     }
 }

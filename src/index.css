@@ -103,3 +103,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Floating animation for hand-shaking image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
