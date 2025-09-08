@@ -1,129 +1,136 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import paymentMethodsImage from "@/assets/payment-methods.jpg";
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  CreditCard,
+  Landmark,
+  HandCoins,
+  TrendingUp,
+  Scale,
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
+import visa from "@/assets/visa.svg";
+import mastercard from "@/assets/mastercard.svg";
+import sepa from "@/assets/sepa.svg";
+import swift from "@/assets/swift.svg";
+import upi from "@/assets/upi.png";
+import Bitcoin from "@/assets/bitcoin.svg";
+import usdt from "@/assets/usdt.svg";
+import euro from "@/assets/euro.svg";
+import dollar from "@/assets/dollar.svg";
+import sterling from "@/assets/sterling.svg";
 
 export function Services() {
+  const { t } = useTranslation();
   const services = [
     {
-      icon: "🏦",
-      title: "Merchant Account Setup",
-      description: "Complete setup and optimization of merchant accounts across multiple payment processors. Get the best rates and terms for your business type.",
-      features: ["Multi-processor comparison", "Rate negotiation", "Quick approval process", "Ongoing support"]
+      icon: CreditCard,
+      title: t("app.services.cardProcessingAcquiring"),
+      description: t("app.services.cardProcessingAcquiringDescription"),
+      methods: [visa, mastercard],
     },
     {
-      icon: "💳",
-      title: "Payment Gateway Integration", 
-      description: "Seamless integration of payment gateways with your existing systems. Ensure secure, fast, and reliable payment processing.",
-      features: ["API integration", "Security compliance", "Multi-currency support", "Real-time monitoring"]
+      icon: Landmark,
+      title: t("app.services.bankingSolutions"),
+      description: t("app.services.bankingSolutionsDescription"),
+      bulletPoints: t("app.services.bankingSolutionsBulletPoints", {
+        returnObjects: true,
+      }),
+      methods: [sepa, swift],
     },
     {
-      icon: "🔒",
-      title: "Compliance & Security",
-      description: "Navigate PCI DSS compliance and security requirements. Protect your business and customers with industry-leading security measures.",
-      features: ["PCI DSS guidance", "Security audits", "Risk assessment", "Fraud prevention"]
+      icon: HandCoins,
+      title: t("app.services.alternativePaymentMethods"),
+      description: t("app.services.alternativePaymentMethodsDescription"),
+      methods: [upi],
     },
     {
-      icon: "📊",
-      title: "Payment Analytics",
-      description: "Comprehensive reporting and analytics to optimize your payment performance. Track metrics, identify trends, and reduce costs.",
-      features: ["Performance tracking", "Cost analysis", "Success rate optimization", "Custom dashboards"]
+      icon: TrendingUp,
+      title: t("app.services.onAndOffRampServices"),
+      description: t("app.services.onAndOffRampServicesDescription"),
+      bulletPoints: t("app.services.onAndOffRampServicesBulletPoints", {
+        returnObjects: true,
+      }),
+      methods: [euro, dollar, sterling, Bitcoin, usdt],
     },
     {
-      icon: "🌐",
-      title: "International Payments",
-      description: "Expand globally with multi-currency payment solutions. Handle international transactions with confidence and compliance.",
-      features: ["Multi-currency processing", "Foreign exchange optimization", "Local payment methods", "Regulatory compliance"]
+      icon: Scale,
+      title: t("app.services.licensing"),
+      description: t("app.services.licensingDescription"),
     },
-    {
-      icon: "⚡",
-      title: "Payment Optimization",
-      description: "Improve payment success rates and reduce processing costs. Ongoing optimization ensures peak performance.",
-      features: ["Success rate improvement", "Cost reduction strategies", "Performance monitoring", "Continuous optimization"]
-    }
+    // {
+    //   icon: Zap,
+    //   title: "Fraud Prevention",
+    //   description: "Advanced fraud detection and prevention systems to minimize chargebacks and protect your revenue."
+    // }
   ];
 
   return (
     <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl">🎯</span>
-            <span className="text-payment-success font-semibold">Our Services</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Complete Payment Solutions
+            {t("app.services.title")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From setup to optimization, we provide end-to-end payment services that grow with your business 🚀
+            {t("app.services.description_1")} <br /> <br />
+            {t("app.services.description_2")}
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="bg-card-gradient border-border hover:shadow-professional transition-all duration-300 group">
-              <CardHeader>
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+            <Card
+              key={index}
+              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 shadow-soft shadow-primary"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <CardHeader className="space-y-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <service.icon className="w-6 h-6" />
                 </div>
-                <CardTitle className="text-foreground">{service.title}</CardTitle>
+                <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className="w-1.5 h-1.5 bg-payment-success rounded-full"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <CardDescription className="text-base leading-relaxed">
+                  {service.description}
+                </CardDescription>
+                {service.bulletPoints &&
+                  Array.isArray(service.bulletPoints) && (
+                    <ul className="space-y-2 mb-6 my-2">
+                      {service.bulletPoints.map((bulletPoint, index) => (
+                        <li key={index} className="flex items-center gap-2">
+                          <span className="w-2 h-2 bg-payment-success rounded-full"></span>
+                          <span className="text-muted-foreground">
+                            {bulletPoint}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                {service.methods && (
+                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/50">
+                    <div className="flex items-center gap-2">
+                      {service.methods.map((method, methodIndex) => (
+                        <img
+                          key={methodIndex}
+                          src={method}
+                          alt={method}
+                          className={index === 0 ? "w-10 h-10" : index === 3 ? "w-8 h-8" : "w-12 h-12"}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Featured Service Banner */}
-        <div className="bg-card-gradient rounded-2xl p-8 md:p-12 border border-border">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-foreground mb-4">
-                🎉 Special: Complete Payment Audit
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Get a comprehensive review of your current payment setup with personalized recommendations. 
-                Identify cost savings and improvement opportunities worth thousands annually.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-payment-success rounded-full"></span>
-                  <span className="text-muted-foreground">Current system analysis</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-payment-success rounded-full"></span>
-                  <span className="text-muted-foreground">Cost optimization recommendations</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-payment-success rounded-full"></span>
-                  <span className="text-muted-foreground">Security & compliance review</span>
-                </li>
-              </ul>
-              <Button 
-                variant="payment"
-                className="font-semibold"
-              >
-                📞 Book Free Audit
-              </Button>
-            </div>
-            <div className="relative">
-              <img 
-                src={paymentMethodsImage} 
-                alt="Payment methods and processing"
-                className="rounded-xl shadow-professional"
-              />
-              <div className="absolute inset-0 bg-payment-gradient opacity-10 rounded-xl"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

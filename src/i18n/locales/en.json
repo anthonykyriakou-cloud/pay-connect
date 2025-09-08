@@ -4,7 +4,37 @@
         "description": "PaymentPro is a payment processing platform that allows you to accept payments online.",
         "hero": {
             "title": "Who we are?",
-            "description": "A consultancy designed to connect you with the desired solution that you are looking for.  At KeyConnections, we understand the difficulties and challenges faced when choosing a Payment or Banking provider. Choosing the right provider can be overwhelming, and we’re here to guide you every step of the way."
+            "description": "A consultancy designed to connect you with the desired solution that you are looking for.  At KeyConnections, we understand the difficulties and challenges faced when choosing a Payment or Banking provider. Choosing the right provider can be overwhelming, and we’re here to guide you every step of the way.",
+            "button": {
+                "getStarted": "Get Started Today",
+                "viewServices": "View Services"
+            }
+        },
+        "services": {
+            "title": "Why Choose Us?",
+            "description_1": "We specialise in connecting Merchants with trusted Providers. With our years of expertise and global network, we can match you with the right partners to help your business operate smoothly and grow.",
+            "description_2": "Our approach is built on transparency, trust and reliability. We listen to your needs, find tailored solutions to boost your approval rates and ensure your customers have access to the payment options they expect.",
+            "cardProcessingAcquiring": "Card Processing / Acquiring",
+            "cardProcessingAcquiringDescription": "Global coverage for Visa and Mastercard processing. We examine your current portfolio and suggest ways to improve your approval rates and expand your geographic coverage.",
+            "bankingSolutions": "Banking Solutions",
+            "bankingSolutionsDescription": "Opening of Bank Accounts for on and offshored licensed Merchants globally.",
+            "bankingSolutionsBulletPoints": [
+                "B2B",
+                "C2B",
+                "B2C"
+            ],
+            "alternativePaymentMethods": "Alternative Payment Methods (APMs)",
+            "alternativePaymentMethodsDescription": "We hold a vast portfolio of local payment methods within Europe, Asia, Africa, LATAM and Oceania tailored to your needs.",
+            "onAndOffRampServices": "On and Off Ramp Services",
+            "onAndOffRampServicesDescription": "OTC Desks that have rails to cover conversions from 20+ currencies.",
+            "onAndOffRampServicesBulletPoints": [
+                "Daily Settlements",
+                "On Ramp",
+                "Off Ramp",
+                "24/7 dedicated Account Manager"
+            ],
+            "licensing": "Licensing",
+            "licensingDescription": "We also help with obtaining licenses in multiple jurisdictions. If you are a start up or established business looking to expand your business in new regions, we can facilitate and aid in your growth."
         }
     }
 }
