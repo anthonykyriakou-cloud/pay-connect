@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Clock, Video } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CalendarIntegration = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="py-24 bg-background">
+    <section id="book-consultation" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl font-bold">Schedule Your Consultation</h2>
+          <h2 className="text-4xl font-bold">{t('app.calendarBooking.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Book a free consultation with our payment experts and get personalized recommendations
+            {t('app.calendarBooking.description')}
           </p>
         </div>
         

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./language-switcher";
+import ScrollIntoView from "react-scroll-into-view";
 
 interface NavigationProps {
   className?: string;
@@ -14,9 +15,13 @@ export function Navigation({ className }: NavigationProps) {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
+    { href: "#services", label: "Services" },
+    { href: "#book-consultation", label: "Contact" },
   ];
+
+  const onBookConsultation = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav
@@ -50,9 +55,11 @@ export function Navigation({ className }: NavigationProps) {
                 {item.label}
               </a>
             ))}
-            <Button variant="payment" className="font-semibold">
-              📞 Book Consultation
-            </Button>
+            <ScrollIntoView selector="#book-consultation">
+              <Button variant="payment" className="font-semibold" onClick={onBookConsultation}>
+                📞 {t('app.navigation.bookConsultation')}
+              </Button>
+            </ScrollIntoView>
           </div>
 
           <button
@@ -99,13 +106,15 @@ export function Navigation({ className }: NavigationProps) {
                   {item.label}
                 </a>
               ))}
-              <Button
-                variant="payment"
-                className="w-full font-semibold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                📞 Book Consultation
-              </Button>
+              <ScrollIntoView selector="#book-consultation">
+                <Button
+                  variant="payment"
+                  className="w-full font-semibold"
+                  onClick={onBookConsultation}
+                >
+                  📞 {t("app.navigation.bookConsultation")}
+                </Button>
+              </ScrollIntoView>
             </div>
           </div>
         )}

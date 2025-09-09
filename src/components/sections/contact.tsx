@@ -6,9 +6,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     contactName: "",
     contactEmail: "",
@@ -55,14 +57,14 @@ Services Interested In: ${formData.servicesInterested}
   };
 
   return (
-    <section className="py-24 bg-gradient-subtle">
+    <section id="book-consultation" className="py-24 bg-gradient-subtle">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
           <Card className="shadow-elegant border-0">
             <CardHeader className="text-center space-y-4">
-              <CardTitle className="text-3xl">Get Your Free Consultation</CardTitle>
+              <CardTitle className="text-3xl">{t('app.contactForm.title')}</CardTitle>
               <CardDescription className="text-lg">
-                Tell us about your business and we'll provide tailored payment solutions
+                {t('app.contactForm.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">

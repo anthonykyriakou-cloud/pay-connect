@@ -1,7 +1,10 @@
 {
     "app": {
         "name": "KeyConnections",
-        "description": "PaymentPro is a payment processing platform that allows you to accept payments online.",
+        "description": "A consultancy designed to connect you with the desired solution that you are looking for. At Key Connections, we understand the difficulties and challenges faced when choosing a Payment or Banking provider. Choosing the right provider can be overwhelming, and we’re here to guide you every step of the way.",
+        "navigation": {
+            "bookConsultation": "Book Consultation"
+        },
         "hero": {
             "title": "Who we are?",
             "description": "A consultancy designed to connect you with the desired solution that you are looking for.  At KeyConnections, we understand the difficulties and challenges faced when choosing a Payment or Banking provider. Choosing the right provider can be overwhelming, and we’re here to guide you every step of the way.",
@@ -9,6 +12,14 @@
                 "getStarted": "Get Started Today",
                 "viewServices": "View Services"
             }
+        },
+        "calendarBooking": {
+            "title": "Schedule Your Free Consultation",
+            "description": "Book a free consultation with our payment experts and get personalized recommendations"            
+        },
+        "contactForm": {
+            "title": "Let's work together",
+            "description": "Tell us about your business and we'll provide tailored payment solutions"
         },
         "services": {
             "title": "Why Choose Us?",

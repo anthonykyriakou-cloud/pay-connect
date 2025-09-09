@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-payment-advisor.jpg";
 import handShakingImage from "@/assets/hero-handshake.png";
 import { useTranslation } from "react-i18next";
+import ScrollIntoView from "react-scroll-into-view";
 
 export function Hero() {
   const { t } = useTranslation();
   return (
     <section className="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden">
-      
       <div className="absolute inset-0">
         <img
           src={heroImage}
@@ -36,13 +36,15 @@ export function Hero() {
               >
                 {t("app.hero.button.getStarted")}
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-border hover:bg-secondary/50 hover:text-black text-lg px-8 py-6 transition-all duration-300"
-              >
-                {t("app.hero.button.viewServices")}
-              </Button>
+              <ScrollIntoView selector="#services">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-border hover:bg-secondary/50 hover:text-black text-lg px-8 py-6 transition-all duration-300 w-full"
+                >
+                  {t("app.hero.button.viewServices")}
+                </Button>
+              </ScrollIntoView>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
@@ -67,9 +69,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="hidden md:flex justify-center lg:justify-end items-center">
-            <div className="relative">              
-
+          <div className="flex justify-center lg:justify-end items-center">
+            <div className="relative">
               <div className="relative animate-float">
                 <div className="relative rounded-2xl overflow-hidden shadow-elegant">
                   <img
@@ -79,7 +80,7 @@ export function Hero() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
         </div>
