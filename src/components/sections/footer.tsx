@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import TelegramIcon from "@/assets/telegram.svg";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -6,119 +7,52 @@ export function Footer() {
     <footer className="bg-secondary border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-payment-gradient rounded-lg flex items-center justify-center">
-                <span className="text-lg font-bold text-black">💳</span>
-              </div>
-              <span className="text-xl font-bold text-foreground">
-                {t("app.name")}
-              </span>
-            </div>
-            <p className="text-muted-foreground mb-4 max-w-md">
-              {t("app.description")}
-            </p>
+          <div className="md:col-span-2 flex flex-col">
+            <div className="flex-1" />
             <div className="flex gap-4">
-              <span className="text-2xl hover:scale-110 transition-transform cursor-pointer">
-                📧
-              </span>
-              <span className="text-2xl hover:scale-110 transition-transform cursor-pointer">
-                📱
-              </span>
-              <span className="text-2xl hover:scale-110 transition-transform cursor-pointer">
-                💼
-              </span>
+              <a
+                href="mailto:support@keyconnections.io"
+                className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+              >
+                <span>📧</span> {t('app.footer.supportEmail')}
+              </a>
+              <a
+                href="https://t.me/ak_keyconnections"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+              >
+                <img src={TelegramIcon} alt="Telegram" className="w-4 h-4" /> ak_keyconnections
+              </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>
-                <a href="/" className="hover:text-foreground transition-colors">
-                  🏠 Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services"
-                  className="hover:text-foreground transition-colors"
-                >
-                  🎯 Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="hover:text-foreground transition-colors"
-                >
-                  📞 Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  📋 Resources
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Services</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  🏦 Merchant Accounts
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  💳 Payment Gateways
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  🔒 Compliance
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  📊 Analytics
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
 
         <div className="bg-slate-300/30 rounded-lg p-6 my-8">
           <h4 className="font-semibold text-foreground mb-3">
-            ⚠️ Important Disclaimer
+            ⚠️ {t('app.footer.disclaimer')}
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            <strong>Key Connections</strong> is not a payment institution,
-            financial institution, or bank that holds client funds. We are
-            strictly a <strong>Consultancy</strong> that connects you with
-            regulated institutions responsible for your funds. We do not assume
-            or hold any liability in case of loss of funds.
+            <strong>{t("app.name")}</strong> {t('app.footer.disclaimerDescription')}
           </p>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} {t("app.name")}. All rights reserved.
+            © {new Date().getFullYear()} {t("app.name")}. {t('app.footer.allRightsReserved')}
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground mt-4 md:mt-0">
             <a href="#" className="hover:text-foreground transition-colors">
-              Privacy Policy
+              {t('app.footer.privacyPolicy')}
             </a>
             <a href="#" className="hover:text-foreground transition-colors">
-              Terms of Service
+              {t('app.footer.termsOfService')}
             </a>
-            <a href="/cookie-policy" className="hover:text-foreground transition-colors">
-              Cookie Policy
+            <a
+              href="/cookie-policy"
+              className="hover:text-foreground transition-colors"
+            >
+              {t('app.footer.cookiePolicy')}
             </a>
           </div>
         </div>

@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Clean white professional theme */
-    --background: 0 0% 100%; /* Clean white background */
+    --background: 0 0% 97%; /* Clean white background */
     --foreground: 225 15% 15%; /* Dark text for contrast */
 
     --card: 0 0% 99%; /* Subtle off-white cards */

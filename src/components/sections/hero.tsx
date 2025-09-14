@@ -20,7 +20,7 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           <div className="space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mt-10">
               {t("app.hero.title")}
             </h1>
 
@@ -29,13 +29,15 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="payment"
-                size="lg"
-                className="text-lg px-8 py-6 shadow-trust-glow font-semibold"
-              >
-                {t("app.hero.button.getStarted")}
-              </Button>
+              <ScrollIntoView selector="#book-consultation">
+                <Button
+                  variant="payment"
+                  size="lg"
+                  className="text-lg px-8 py-6 shadow-trust-glow font-semibold w-full"
+                >
+                  {t("app.hero.button.getStarted")}
+                </Button>
+              </ScrollIntoView>
               <ScrollIntoView selector="#services">
                 <Button
                   variant="outline"

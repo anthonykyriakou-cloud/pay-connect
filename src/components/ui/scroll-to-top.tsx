@@ -37,7 +37,7 @@ export function ScrollToTop() {
       <Button
         onClick={scrollToTop}
         size="lg"
-        className="rounded-full w-12 h-12 p-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90 text-primary-foreground"
+        className="rounded-full w-12 h-12 p-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-white"
         aria-label="Scroll to top"
       >
         <ChevronUp className="w-6 h-6" />

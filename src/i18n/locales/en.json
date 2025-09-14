@@ -15,7 +15,9 @@
         },
         "calendarBooking": {
             "title": "Schedule Your Free Consultation",
-            "description": "Book a free consultation with our payment experts and get personalized recommendations"            
+            "description": "Book a free consultation with our payment experts and get personalized recommendations",
+            "cantFindSuitableTime": "Can't find a suitable time? ",
+            "contactUsOnTelegram": "Contact us directly on Telegram"            
         },
         "contactForm": {
             "title": "Let's work together",
@@ -46,6 +48,15 @@
             ],
             "licensing": "Licensing",
             "licensingDescription": "We also help with obtaining licenses in multiple jurisdictions. If you are a start up or established business looking to expand your business in new regions, we can facilitate and aid in your growth."
+        },
+        "footer": {
+            "disclaimer": "Disclaimer",
+            "disclaimerDescription": "is not a payment institution, financial institution, or bank that holds client funds. We are strictly a Consultancy that connects you with regulated institutions responsible for your funds. We do not assume or hold any liability in case of loss of funds.",
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service",
+            "cookiePolicy": "Cookie Policy",
+            "allRightsReserved": "All rights reserved.",
+            "supportEmail": "support@keyconnections.io"
         }
     }
 }

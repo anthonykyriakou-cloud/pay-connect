@@ -91,7 +91,7 @@ export function Services() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 shadow-soft shadow-primary flex flex-col h-full"
+              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 shadow-soft flex flex-col h-full"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader className="space-y-4">
