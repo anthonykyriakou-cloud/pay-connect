@@ -82,7 +82,7 @@ export function Services() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t("app.services.description_1")} <br /> <br />
-            {t("app.services.description_2")}
+            {t("app.services.description_2")} <strong>{t("app.services.transparencyTrustReliability")}</strong>. {t("app.services.description_3")}
           </p>
         </div>
 

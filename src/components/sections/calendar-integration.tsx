@@ -25,24 +25,11 @@ const CalendarIntegration = () => {
               </div>
               <CardTitle className="text-2xl">Google Calendar</CardTitle>
               <CardDescription className="text-base">
-                Schedule directly through Google Calendar integration
+                {t('app.calendarBooking.googleCalendarDescription')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <span>Flexible time slots</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Video className="w-5 h-5 text-primary" />
-                  <span>Meet or Zoom integration</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  <span>Calendar sync</span>
-                </div>
-              </div>
+              
               <Button 
                 variant="outline" 
                 className="w-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"

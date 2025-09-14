@@ -25,7 +25,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              {t("app.hero.description")}
+              {t("app.hero.description_1")} <strong>{t('app.name')}</strong> {t("app.hero.description_2")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -49,7 +49,7 @@ export function Hero() {
               </ScrollIntoView>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
+            {/* <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">500+</div>
                 <div className="text-sm text-muted-foreground">
@@ -68,7 +68,7 @@ export function Hero() {
                 <div className="text-2xl font-bold text-primary">24/7</div>
                 <div className="text-sm text-muted-foreground">Support</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex justify-center lg:justify-end items-center">

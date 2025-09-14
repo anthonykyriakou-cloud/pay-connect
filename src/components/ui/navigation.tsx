@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./language-switcher";
 import ScrollIntoView from "react-scroll-into-view";
+import KeyLogo from "./logo";
 
 interface NavigationProps {
   className?: string;
@@ -33,8 +34,8 @@ export function Navigation({ className }: NavigationProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-payment-gradient rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-black">🔑</span>
+            <div className="rounded-lg flex items-center justify-center">
+              <span className="text-lg font-bold text-black"><KeyLogo className="rotate-90" size={32} /></span>
             </div>
             <span className="text-xl font-bold text-foreground">
               {t("app.name")}
