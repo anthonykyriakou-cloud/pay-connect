@@ -1,0 +1,28 @@
+# Cloud Build configuration with Artifact Registry
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+steps:
+  # Build and push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/keyconnections-api/api:$COMMIT_SHA', '-f', 'api/Dockerfile', 'api']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/keyconnections-api/api:$COMMIT_SHA']
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'keyconnections-api'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/keyconnections-api/api:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/keyconnections-api/api:$COMMIT_SHA'

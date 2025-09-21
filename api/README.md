@@ -39,13 +39,26 @@ Google Cloud Run function for the KeyConnections application backend services.
 
 ### Option 1: Using Cloud Build (Recommended)
 
-1. **Set up Cloud Build trigger:**
+1. **Set up Artifact Registry (one-time setup):**
+   ```bash
+   # Run the setup script
+   ./setup-artifact-registry.sh
+   
+   # Or manually:
+   gcloud services enable artifactregistry.googleapis.com
+   gcloud artifacts repositories create keyconnections-api \
+       --repository-format=docker \
+       --location=us-central1 \
+       --description="Docker repository for KeyConnections API"
+   ```
+
+2. **Set up Cloud Build trigger:**
    - Go to Cloud Build in Google Cloud Console
    - Create a new trigger
    - Connect your repository
    - Set build configuration to use `cloudbuild.yaml` (located in repository root)
 
-2. **Deploy automatically:**
+3. **Deploy automatically:**
    - Push to your main branch
    - Cloud Build will automatically build and deploy
 
@@ -127,6 +140,13 @@ api/
      - Cloud Run Admin
      - Storage Admin
      - Service Account User
+
+4. **"gcr.io repo does not exist"**
+   - **Cause:** Using deprecated Google Container Registry (GCR)
+   - **Solution:** Use Google Artifact Registry instead:
+     ```bash
+     ./setup-artifact-registry.sh
+     ```
 
 ### Alternative Build Configuration
 
