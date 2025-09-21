@@ -5,9 +5,9 @@ steps:
       'build',
       '-t', 'gcr.io/$PROJECT_ID/keyconnections-api:$COMMIT_SHA',
       '-t', 'gcr.io/$PROJECT_ID/keyconnections-api:latest',
-      '.'
+      '-f', 'api/Dockerfile',
+      'api'
     ]
-    dir: 'api'
 
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'

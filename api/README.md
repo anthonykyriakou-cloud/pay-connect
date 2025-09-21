@@ -43,11 +43,13 @@ Google Cloud Run function for the KeyConnections application backend services.
    - Go to Cloud Build in Google Cloud Console
    - Create a new trigger
    - Connect your repository
-   - Set build configuration to use `api/cloudbuild.yaml`
+   - Set build configuration to use `cloudbuild.yaml` (located in repository root)
 
 2. **Deploy automatically:**
    - Push to your main branch
    - Cloud Build will automatically build and deploy
+
+**Note:** The `cloudbuild.yaml` file is in the repository root, not in the `api/` folder, because Cloud Build expects it there.
 
 ### Option 2: Manual Deployment
 
@@ -105,6 +107,39 @@ api/
 ├── .env.example          # Environment variables template
 ├── .dockerignore         # Docker ignore file
 └── README.md            # This file
+```
+
+## Troubleshooting
+
+### Common Cloud Build Issues
+
+1. **"dockerfile parse error line 1: unknown instruction: STEPS:"**
+   - **Cause:** Cloud Build is trying to use cloudbuild.yaml as a Dockerfile
+   - **Solution:** Make sure your Cloud Build trigger points to `cloudbuild.yaml` in the repository root, not in the `api/` folder
+
+2. **"Dockerfile not found"**
+   - **Cause:** Cloud Build can't find the Dockerfile
+   - **Solution:** The build configuration uses `-f api/Dockerfile` to specify the correct path
+
+3. **Permission errors**
+   - **Cause:** Insufficient IAM permissions
+   - **Solution:** Ensure your Cloud Build service account has the necessary roles:
+     - Cloud Run Admin
+     - Storage Admin
+     - Service Account User
+
+### Alternative Build Configuration
+
+If you continue having issues, try the simpler configuration:
+```yaml
+# Use cloudbuild-simple.yaml instead
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/keyconnections-api:$COMMIT_SHA', '-f', 'api/Dockerfile', 'api']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/keyconnections-api:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', 'keyconnections-api', '--image', 'gcr.io/$PROJECT_ID/keyconnections-api:$COMMIT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 ```
 
 ## Monitoring
