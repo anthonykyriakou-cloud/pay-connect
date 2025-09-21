@@ -12,9 +12,18 @@ Google Cloud Run function for the KeyConnections application backend services.
 
 2. **Set up environment variables:**
    ```bash
-   cp .env.example .env
-   # Edit .env with your actual values
+   # Create .env file with your actual values
+   echo "RESEND_API_KEY=re_your_api_key_here" > .env
+   echo "FROM_EMAIL=noreply@keyconnections.io" >> .env
+   echo "TO_EMAIL=contact@keyconnections.io" >> .env
+   echo "PORT=8080" >> .env
+   echo "NODE_ENV=development" >> .env
    ```
+   
+   **Get your Resend API key:**
+   1. Go to [Resend.com](https://resend.com)
+   2. Sign up/login and create an API key
+   3. Replace `re_your_api_key_here` with your actual API key
 
 3. **Run locally:**
    ```bash
@@ -96,11 +105,13 @@ npm run deploy
 
 ## Environment Variables
 
-Copy `.env.example` to `.env` and configure:
+Configure these environment variables:
 
 - `PORT`: Server port (default: 8080)
 - `NODE_ENV`: Environment (development/production)
-- `SMTP_*`: Email configuration for contact forms
+- `RESEND_API_KEY`: Your Resend API key (get from [resend.com](https://resend.com))
+- `FROM_EMAIL`: Email address to send from (must be verified in Resend)
+- `TO_EMAIL`: Email address to receive contact form submissions
 - `CORS_ORIGIN`: Allowed CORS origins
 
 ## API Endpoints
