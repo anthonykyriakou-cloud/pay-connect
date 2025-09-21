@@ -1,4 +1,7 @@
-# Alternative simpler Cloud Build configuration
+# Cloud Build configuration with proper logging options
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 steps:
   # Build and push the container image
   - name: 'gcr.io/cloud-builders/docker'
