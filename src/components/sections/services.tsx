@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardContent,
@@ -65,12 +64,7 @@ export function Services() {
       icon: Scale,
       title: t("app.services.licensing"),
       description: t("app.services.licensingDescription"),
-    },
-    // {
-    //   icon: Zap,
-    //   title: "Fraud Prevention",
-    //   description: "Advanced fraud detection and prevention systems to minimize chargebacks and protect your revenue."
-    // }
+    }    
   ];
 
   return (
@@ -86,7 +80,6 @@ export function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <Card

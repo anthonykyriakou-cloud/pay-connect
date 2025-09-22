@@ -41,13 +41,7 @@ export function Footer() {
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} {t("app.name")}. {t('app.footer.allRightsReserved')}
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground mt-4 md:mt-0">
-            {/* <a href="#" className="hover:text-foreground transition-colors">
-              {t('app.footer.privacyPolicy')}
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              {t('app.footer.termsOfService')}
-            </a> */}
+          <div className="flex gap-6 text-sm text-muted-foreground mt-4 md:mt-0">            
             <a
               href="/cookie-policy"
               className="hover:text-foreground transition-colors"

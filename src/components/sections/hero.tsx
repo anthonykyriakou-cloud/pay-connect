@@ -47,28 +47,7 @@ export function Hero() {
                   {t("app.hero.button.viewServices")}
                 </Button>
               </ScrollIntoView>
-            </div>
-
-            {/* <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">
-                  Happy Clients
-                </div>
-              </div>
-              <div className="hidden sm:block h-8 w-px bg-border"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">98%</div>
-                <div className="text-sm text-muted-foreground">
-                  Success Rate
-                </div>
-              </div>
-              <div className="hidden sm:block h-8 w-px bg-border"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </div>
-            </div> */}
+            </div>            
           </div>
 
           <div className="flex justify-center lg:justify-end items-center">
