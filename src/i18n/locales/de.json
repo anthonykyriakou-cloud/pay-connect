@@ -1,10 +1,82 @@
 {
-    "app": {
-        "name": "PayConnect",
-        "description": "PayConnect ist eine Zahlungsverarbeitungsplattform, die es Ihnen ermöglicht, Online-Zahlungen zu akzeptieren.",
-        "hero": {
-            "title": "Vereinfachen Sie Ihre Zahlungsreise",
-            "description": "Expertenberatung für Unternehmen, die zuverlässige, sichere und effiziente Zahlungsverarbeitungslösungen suchen. Lassen Sie uns Ihre Zahlungsherausforderungen in Wettbewerbsvorteile umwandeln. ��✨"
-        }
+  "app": {
+    "name": "KeyConnections",
+    "description": "Eine Beratung, die darauf ausgelegt ist, Sie mit der gewünschten Lösung zu verbinden, nach der Sie suchen. Bei Key Connections verstehen wir die Schwierigkeiten und Herausforderungen, die bei der Auswahl eines Zahlungs- oder Banking-Anbieters auftreten. Die Wahl des richtigen Anbieters kann überwältigend sein, und wir sind hier, um Sie bei jedem Schritt zu begleiten.",
+    "navigation": {
+      "bookConsultation": "Beratung buchen"
+    },
+    "hero": {
+      "title": "Wer wir sind?",
+      "description_1": "Eine Beratung, die darauf ausgelegt ist, Sie mit der gewünschten Lösung zu verbinden, nach der Sie suchen. Bei ",
+      "description_2": " verstehen wir die Schwierigkeiten und Herausforderungen, die bei der Auswahl eines Zahlungs- oder Banking-Anbieters auftreten. Die Wahl des richtigen Anbieters kann überwältigend sein, und wir sind hier, um Sie bei jedem Schritt zu begleiten.",
+      "button": {
+        "getStarted": "Heute beginnen",
+        "viewServices": "Services anzeigen"
+      }
+    },
+    "calendarBooking": {
+      "title": "Planen Sie Ihre kostenlose Beratung",
+      "description": "Buchen Sie eine kostenlose Beratung mit unseren Zahlungsexperten und erhalten Sie personalisierte Empfehlungen",
+      "cantFindSuitableTime": "Können Sie keine passende Zeit finden? ",
+      "contactUsOnTelegram": "Kontaktieren Sie uns direkt über Telegram",
+      "googleCalendarDescription": "Planen Sie ein Meeting mit unserem Team"
+    },
+    "contactForm": {
+      "title": "Lassen Sie uns zusammenarbeiten",
+      "description": "Erzählen Sie uns von Ihrem Unternehmen und wir bieten maßgeschneiderte Zahlungslösungen",
+      "success": "Anfrage erfolgreich übermittelt!",
+      "successDescription": "Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+      "error": "Übermittlung fehlgeschlagen",
+      "errorDescription": "Beim Übermitteln Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+      "contactName": "Kontaktname",
+      "contactEmail": "Kontakt-E-Mail",
+      "telegramWhatsapp": "Telegram/WhatsApp",
+      "websiteUrl": "Website-URL",
+      "licenseInformation": "Lizenzinformationen",
+      "targetCountries": "Zielländer",
+      "monthlyVolume": "Monatliches Volumen",
+      "selectMonthlyVolume": "Monatliches Volumen auswählen",
+      "yearsOfOperation": "Jahre im Betrieb",
+      "selectYears": "Jahre auswählen",
+      "startup": "Startup (Weniger als 1 Jahr)",
+      "servicesInterested": "Services, an denen Sie interessiert sind",
+      "servicesInterestedPlaceholder": "Bitte beschreiben Sie die Zahlungslösungen, die Sie benötigen...",
+      "submitInquiry": "Anfrage senden",
+      "submitting": "Wird übermittelt...",
+      "submittingDescription": "Bitte warten Sie, während wir Ihre Anfrage bearbeiten."
+    },
+    "services": {
+      "title": "Warum uns wählen?",
+      "description_1": "Wir spezialisieren uns darauf, Händler mit vertrauenswürdigen Anbietern zu verbinden. Mit unserer jahrelangen Expertise und unserem globalen Netzwerk können wir Sie mit den richtigen Partnern zusammenbringen, um Ihr Unternehmen reibungslos zu betreiben und zu wachsen.",
+      "description_2": "Unser Ansatz basiert auf ",
+      "transparencyTrustReliability": "Transparenz, Vertrauen und Zuverlässigkeit",
+      "description_3": " Wir hören auf Ihre Bedürfnisse, finden maßgeschneiderte Lösungen zur Verbesserung Ihrer Genehmigungsraten und stellen sicher, dass Ihre Kunden Zugang zu den Zahlungsoptionen haben, die sie erwarten.",
+      "cardProcessingAcquiring": "Kartenverarbeitung / Acquiring",
+      "cardProcessingAcquiringDescription": "Globale Abdeckung für Visa- und Mastercard-Verarbeitung. Wir untersuchen Ihr aktuelles Portfolio und schlagen Wege vor, um Ihre Genehmigungsraten zu verbessern und Ihre geografische Abdeckung zu erweitern.",
+      "bankingSolutions": "Banking-Lösungen",
+      "bankingSolutionsDescription": "Eröffnung von Bankkonten für onshore und offshore lizenzierte Händler weltweit.",
+      "bankingSolutionsBulletPoints": ["B2B", "C2B", "B2C"],
+      "alternativePaymentMethods": "Alternative Zahlungsmethoden (APMs)",
+      "alternativePaymentMethodsDescription": "Wir verfügen über ein umfangreiches Portfolio lokaler Zahlungsmethoden in Europa, Asien, Afrika, LATAM und Ozeanien, die auf Ihre Bedürfnisse zugeschnitten sind.",
+      "onAndOffRampServices": "On- und Off-Ramp-Services",
+      "onAndOffRampServicesDescription": "OTC-Desks mit Schienen zur Abdeckung von Konvertierungen aus über 20 Währungen.",
+      "onAndOffRampServicesBulletPoints": [
+        "Tägliche Abrechnungen",
+        "On Ramp",
+        "Off Ramp",
+        "24/7 dedizierter Account Manager"
+      ],
+      "licensing": "Lizenzierung",
+      "licensingDescription": "Wir helfen auch bei der Erlangung von Lizenzen in mehreren Jurisdiktionen. Wenn Sie ein Startup oder etabliertes Unternehmen sind, das Ihr Geschäft in neuen Regionen erweitern möchte, können wir Ihr Wachstum fördern und unterstützen."
+    },
+    "footer": {
+      "disclaimer": "Haftungsausschluss",
+      "disclaimerDescription": "ist kein Zahlungsinstitut, Finanzinstitut oder Bank, das Kundengelder hält. Wir sind ausschließlich eine Beratung, die Sie mit regulierten Institutionen verbindet, die für Ihre Gelder verantwortlich sind. Wir übernehmen keine Haftung im Falle eines Geldverlusts.",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "termsOfService": "Nutzungsbedingungen",
+      "cookiePolicy": "Cookie-Richtlinie",
+      "allRightsReserved": "Alle Rechte vorbehalten.",
+      "supportEmail": "support@keyconnections.io"
     }
+  }
 }

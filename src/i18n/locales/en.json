@@ -23,7 +23,27 @@
     },
     "contactForm": {
       "title": "Let's work together",
-      "description": "Tell us about your business and we'll provide tailored payment solutions"
+      "description": "Tell us about your business and we'll provide tailored payment solutions",
+      "success": "Inquiry Submitted Successfully!",
+      "successDescription": "Thank you! We'll get back to you within 24 hours.",
+      "error": "Submission Failed",
+      "errorDescription": "There was an error submitting your inquiry. Please try again or contact us directly.",
+      "contactName": "Contact Name",
+      "contactEmail": "Contact Email",
+      "telegramWhatsapp": "Telegram/WhatsApp",
+      "websiteUrl": "Website URL",
+      "licenseInformation": "License Information",
+      "targetCountries": "Target Countries",
+      "monthlyVolume": "Monthly Volume",
+      "selectMonthlyVolume": "Select monthly volume",
+      "yearsOfOperation": "Years of Operation",
+      "selectYears": "Select years",
+      "startup": "Startup (Less than 1 year)",
+      "servicesInterested": "Services You Are Interested In",
+      "servicesInterestedPlaceholder": "Please describe the payment solutions you need...",
+      "submitInquiry": "Submit Inquiry",
+      "submitting": "Submitting...",
+      "submittingDescription": "Please wait while we process your inquiry."
     },
     "services": {
       "title": "Why Choose Us?",

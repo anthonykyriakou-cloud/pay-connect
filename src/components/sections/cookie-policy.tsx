@@ -19,7 +19,6 @@ export function CookiePolicy() {
         </div>
 
         <div className="space-y-8">
-          {/* What Are Cookies */}
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">🍪 What Are Cookies?</CardTitle>
@@ -37,7 +36,6 @@ export function CookiePolicy() {
             </CardContent>
           </Card>
 
-          {/* Types of Cookies */}
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">📋 Types of Cookies We Use</CardTitle>
@@ -96,7 +94,6 @@ export function CookiePolicy() {
             </CardContent>
           </Card>
 
-          {/* Specific Cookies */}
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">🔍 Specific Cookies We Use</CardTitle>

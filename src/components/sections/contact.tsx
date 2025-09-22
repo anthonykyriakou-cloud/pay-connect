@@ -35,36 +35,73 @@ const ContactForm = () => {
     servicesInterested: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Create mailto link with form data
-    const subject = "Payment Solutions Inquiry";
-    const body = `
-      Contact Name: ${formData.contactName}
-      Contact Email: ${formData.contactEmail}
-      Telegram/WhatsApp: ${formData.telegramWhatsapp}
-      URL: ${formData.url}
-      License: ${formData.license}
-      Target Countries: ${formData.targetCountries}
-      Monthly Volume: ${formData.monthlyVolume}
-      Years of Operation: ${formData.yearsOperation}
-      Services Interested In: ${formData.servicesInterested}
-    `.trim();
-
-    const mailtoLink = `mailto:ak@keyconnections.io?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-
     toast({
-      title: "Form Submitted",
-      description:
-        "Your email client will open with the pre-filled information.",
+      title: t("app.contactForm.submitting"),
+      description: t("app.contactForm.submittingDescription"),
     });
+
+    try {
+      const messageContent = `
+        Contact Name: ${formData.contactName}
+        Contact Email: ${formData.contactEmail}
+        Telegram/WhatsApp: ${formData.telegramWhatsapp || 'Not provided'}
+        Website URL: ${formData.url || 'Not provided'}
+        License Information: ${formData.license || 'Not provided'}
+        Target Countries: ${formData.targetCountries || 'Not specified'}
+        Monthly Volume: ${formData.monthlyVolume || 'Not specified'}
+        Years of Operation: ${formData.yearsOperation || 'Not specified'}
+        Services Interested In: ${formData.servicesInterested || 'Not specified'}
+      `.trim();
+
+      const response = await fetch('https://keyconnections-api-310845305865.us-central1.run.app/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.contactName,
+          email: formData.contactEmail,
+          message: messageContent
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({
+          title: t("app.contactForm.success"),
+          description: t("app.contactForm.successDescription"),
+          variant: "default",
+        });
+
+        setFormData({
+          contactName: "",
+          contactEmail: "",
+          telegramWhatsapp: "",
+          url: "",
+          license: "",
+          targetCountries: "",
+          monthlyVolume: "",
+          yearsOperation: "",
+          servicesInterested: "",
+        });
+      } else {
+        throw new Error(result.error || 'Failed to submit inquiry');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: t("app.contactForm.error"),
+        description: t("app.contactForm.errorDescription"),
+        variant: "destructive",
+      });
+    }
   };
 
-  const handleChange = (field: string, value: string) => {
+  const onChange = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -85,29 +122,29 @@ const ContactForm = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={onSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="contactName">Contact Name *</Label>
+                    <Label htmlFor="contactName">{t("app.contactForm.contactName")} *</Label>
                     <Input
                       id="contactName"
                       required
                       value={formData.contactName}
                       onChange={(e) =>
-                        handleChange("contactName", e.target.value)
+                        onChange("contactName", e.target.value)
                       }
                       className="h-12"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="contactEmail">Contact Email *</Label>
+                    <Label htmlFor="contactEmail">{t("app.contactForm.contactEmail")} *</Label>
                     <Input
                       id="contactEmail"
                       type="email"
                       required
                       value={formData.contactEmail}
                       onChange={(e) =>
-                        handleChange("contactEmail", e.target.value)
+                        onChange("contactEmail", e.target.value)
                       }
                       className="h-12"
                     />
@@ -121,41 +158,43 @@ const ContactForm = () => {
                       id="telegramWhatsapp"
                       value={formData.telegramWhatsapp}
                       onChange={(e) =>
-                        handleChange("telegramWhatsapp", e.target.value)
+                        onChange("telegramWhatsapp", e.target.value)
                       }
                       className="h-12"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="url">Website URL</Label>
+                    <Label htmlFor="url">{t("app.contactForm.websiteUrl")} *</Label>
                     <Input
                       id="url"
                       type="url"
+                      required
                       value={formData.url}
-                      onChange={(e) => handleChange("url", e.target.value)}
+                      onChange={(e) => onChange("url", e.target.value)}
                       className="h-12"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="license">License Information</Label>
+                  <Label htmlFor="license">{t("app.contactForm.licenseInformation")} *</Label>
                   <Input
                     id="license"
+                    required
                     value={formData.license}
-                    onChange={(e) => handleChange("license", e.target.value)}
+                    onChange={(e) => onChange("license", e.target.value)}
                     className="h-12"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="targetCountries">Target Countries</Label>
+                  <Label htmlFor="targetCountries">{t("app.contactForm.targetCountries")}</Label>
                   <Input
                     id="targetCountries"
                     placeholder="e.g., USA, UK, Germany"
                     value={formData.targetCountries}
                     onChange={(e) =>
-                      handleChange("targetCountries", e.target.value)
+                      onChange("targetCountries", e.target.value)
                     }
                     className="h-12"
                   />
@@ -163,14 +202,15 @@ const ContactForm = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="monthlyVolume">Monthly Volume</Label>
+                    <Label htmlFor="monthlyVolume">{t("app.contactForm.monthlyVolume")} *</Label>
                     <Select
+                    required
                       onValueChange={(value) =>
-                        handleChange("monthlyVolume", value)
+                        onChange("monthlyVolume", value)
                       }
                     >
                       <SelectTrigger className="h-12">
-                        <SelectValue placeholder="Select monthly volume" />
+                        <SelectValue placeholder={t("app.contactForm.selectMonthlyVolume")} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="under-10k">Under $10,000</SelectItem>
@@ -191,18 +231,18 @@ const ContactForm = () => {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="yearsOperation">Years of Operation</Label>
+                    <Label htmlFor="yearsOperation">{t("app.contactForm.yearsOfOperation")}</Label>
                     <Select
                       onValueChange={(value) =>
-                        handleChange("yearsOperation", value)
+                        onChange("yearsOperation", value)
                       }
                     >
                       <SelectTrigger className="h-12">
-                        <SelectValue placeholder="Select years" />
+                        <SelectValue placeholder={t("app.contactForm.selectYears")} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="startup">
-                          Startup (Less than 1 year)
+                          {t("app.contactForm.startup")}
                         </SelectItem>
                         <SelectItem value="1-2">1-2 years</SelectItem>
                         <SelectItem value="3-5">3-5 years</SelectItem>
@@ -215,14 +255,14 @@ const ContactForm = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="servicesInterested">
-                    Services You Are Interested In
+                    {t("app.contactForm.servicesInterested")}
                   </Label>
                   <Textarea
                     id="servicesInterested"
-                    placeholder="Please describe the payment solutions you need..."
+                    placeholder={t("app.contactForm.servicesInterestedPlaceholder")}
                     value={formData.servicesInterested}
                     onChange={(e) =>
-                      handleChange("servicesInterested", e.target.value)
+                      onChange("servicesInterested", e.target.value)
                     }
                     className="min-h-[120px] resize-none"
                   />
@@ -233,7 +273,7 @@ const ContactForm = () => {
                   size="lg"
                   className="w-full shadow-elegant hover:shadow-lg transition-all duration-300"
                 >
-                  Submit Inquiry
+                  {t("app.contactForm.submitInquiry")}
                 </Button>
               </form>
             </CardContent>

@@ -1,10 +1,82 @@
 {
-    "app": {
-        "name": "PayConnect",
-        "description": "PayConnect est une plateforme de traitement de paiements qui vous permet d'accepter des paiements en ligne.",
-        "hero": {
-            "title": "Simplifiez Votre Parcours de Paiement",
-            "description": "Conseils d'experts pour les entreprises recherchant des solutions de traitement de paiements fiables, sécurisées et efficaces. Transformons vos défis de paiement en avantages concurrentiels. ��✨"
-        }
+  "app": {
+    "name": "KeyConnections",
+    "description": "Un cabinet de conseil conçu pour vous connecter avec la solution souhaitée que vous recherchez. Chez Key Connections, nous comprenons les difficultés et les défis rencontrés lors du choix d'un fournisseur de Paiement ou Bancaire. Choisir le bon fournisseur peut être accablant, et nous sommes là pour vous guider à chaque étape.",
+    "navigation": {
+      "bookConsultation": "Réserver une Consultation"
+    },
+    "hero": {
+      "title": "Qui sommes-nous ?",
+      "description_1": "Un cabinet de conseil conçu pour vous connecter avec la solution souhaitée que vous recherchez. Chez ",
+      "description_2": " nous comprenons les difficultés et les défis rencontrés lors du choix d'un fournisseur de Paiement ou Bancaire. Choisir le bon fournisseur peut être accablant, et nous sommes là pour vous guider à chaque étape.",
+      "button": {
+        "getStarted": "Commencer Aujourd'hui",
+        "viewServices": "Voir les Services"
+      }
+    },
+    "calendarBooking": {
+      "title": "Planifiez Votre Consultation Gratuite",
+      "description": "Réservez une consultation gratuite avec nos experts en paiements et obtenez des recommandations personnalisées",
+      "cantFindSuitableTime": "Vous ne trouvez pas de créneau convenable ? ",
+      "contactUsOnTelegram": "Contactez-nous directement sur Telegram",
+      "googleCalendarDescription": "Planifiez une réunion avec notre équipe"
+    },
+    "contactForm": {
+      "title": "Travaillons ensemble",
+      "description": "Parlez-nous de votre entreprise et nous fournirons des solutions de paiement sur mesure",
+      "success": "Demande Soumise avec Succès !",
+      "successDescription": "Merci ! Nous vous recontacterons dans les 24 heures.",
+      "error": "Échec de la Soumission",
+      "errorDescription": "Une erreur s'est produite lors de la soumission de votre demande. Veuillez réessayer ou nous contacter directement.",
+      "contactName": "Nom de Contact",
+      "contactEmail": "Email de Contact",
+      "telegramWhatsapp": "Telegram/WhatsApp",
+      "websiteUrl": "URL du Site Web",
+      "licenseInformation": "Informations sur la Licence",
+      "targetCountries": "Pays Cibles",
+      "monthlyVolume": "Volume Mensuel",
+      "selectMonthlyVolume": "Sélectionner le volume mensuel",
+      "yearsOfOperation": "Années d'Exploitation",
+      "selectYears": "Sélectionner les années",
+      "startup": "Startup (Moins d'1 an)",
+      "servicesInterested": "Services qui Vous Intéressent",
+      "servicesInterestedPlaceholder": "Veuillez décrire les solutions de paiement dont vous avez besoin...",
+      "submitInquiry": "Soumettre la Demande",
+      "submitting": "Soumission en cours...",
+      "submittingDescription": "Veuillez patienter pendant que nous traitons votre demande."
+    },
+    "services": {
+      "title": "Pourquoi Nous Choisir ?",
+      "description_1": "Nous nous spécialisons dans la connexion des Marchands avec des Fournisseurs de confiance. Avec nos années d'expertise et notre réseau mondial, nous pouvons vous associer avec les bons partenaires pour aider votre entreprise à fonctionner en douceur et à croître.",
+      "description_2": "Notre approche est construite sur ",
+      "transparencyTrustReliability": "la transparence, la confiance et la fiabilité",
+      "description_3": " Nous écoutons vos besoins, trouvons des solutions sur mesure pour améliorer vos taux d'approbation et nous assurons que vos clients ont accès aux options de paiement qu'ils attendent.",
+      "cardProcessingAcquiring": "Traitement de Cartes / Acquiring",
+      "cardProcessingAcquiringDescription": "Couverture mondiale pour le traitement Visa et Mastercard. Nous examinons votre portefeuille actuel et suggérons des moyens d'améliorer vos taux d'approbation et d'étendre votre couverture géographique.",
+      "bankingSolutions": "Solutions Bancaires",
+      "bankingSolutionsDescription": "Ouverture de Comptes Bancaires pour les Marchands licenciés onshore et offshore dans le monde entier.",
+      "bankingSolutionsBulletPoints": ["B2B", "C2B", "B2C"],
+      "alternativePaymentMethods": "Méthodes de Paiement Alternatives (APMs)",
+      "alternativePaymentMethodsDescription": "Nous détenons un vaste portefeuille de méthodes de paiement locales en Europe, Asie, Afrique, LATAM et Océanie adaptées à vos besoins.",
+      "onAndOffRampServices": "Services On et Off Ramp",
+      "onAndOffRampServicesDescription": "Bureaux OTC qui ont des rails pour couvrir les conversions de plus de 20 devises.",
+      "onAndOffRampServicesBulletPoints": [
+        "Règlements Quotidiens",
+        "On Ramp",
+        "Off Ramp",
+        "Gestionnaire de Compte dédié 24/7"
+      ],
+      "licensing": "Licences",
+      "licensingDescription": "Nous aidons également à obtenir des licences dans plusieurs juridictions. Si vous êtes une startup ou une entreprise établie cherchant à étendre votre activité dans de nouvelles régions, nous pouvons faciliter et aider votre croissance."
+    },
+    "footer": {
+      "disclaimer": "Avis de Non-Responsabilité",
+      "disclaimerDescription": "n'est pas une institution de paiement, une institution financière ou une banque qui détient les fonds des clients. Nous sommes strictement un Cabinet de Conseil qui vous connecte avec des institutions réglementées responsables de vos fonds. Nous n'assumons ni ne détenons aucune responsabilité en cas de perte de fonds.",
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsOfService": "Conditions de Service",
+      "cookiePolicy": "Politique de Cookies",
+      "allRightsReserved": "Tous droits réservés.",
+      "supportEmail": "support@keyconnections.io"
     }
+  }
 }

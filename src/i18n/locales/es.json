@@ -1,10 +1,82 @@
 {
-    "app": {
-        "name": "PayConnect",
-        "description": "PayConnect es una plataforma de procesamiento de pagos que le permite aceptar pagos en línea.",
-        "hero": {
-            "title": "Simplifica Tu Viaje de Pagos",
-            "description": "Orientación experta para empresas que buscan soluciones de procesamiento de pagos confiables, seguras y eficientes. Transformemos tus desafíos de pagos en ventajas competitivas. ��✨"
-        }
+  "app": {
+    "name": "KeyConnections",
+    "description": "Una consultoría diseñada para conectarte con la solución deseada que estás buscando. En Key Connections, entendemos las dificultades y desafíos que se enfrentan al elegir un proveedor de Pagos o Bancario. Elegir el proveedor correcto puede ser abrumador, y estamos aquí para guiarte en cada paso del camino.",
+    "navigation": {
+      "bookConsultation": "Reservar Consulta"
+    },
+    "hero": {
+      "title": "¿Quiénes somos?",
+      "description_1": "Una consultoría diseñada para conectarte con la solución deseada que estás buscando. En ",
+      "description_2": " entendemos las dificultades y desafíos que se enfrentan al elegir un proveedor de Pagos o Bancario. Elegir el proveedor correcto puede ser abrumador, y estamos aquí para guiarte en cada paso del camino.",
+      "button": {
+        "getStarted": "Comienza Hoy",
+        "viewServices": "Ver Servicios"
+      }
+    },
+    "calendarBooking": {
+      "title": "Programa Tu Consulta Gratuita",
+      "description": "Reserva una consulta gratuita con nuestros expertos en pagos y obtén recomendaciones personalizadas",
+      "cantFindSuitableTime": "¿No puedes encontrar un horario adecuado? ",
+      "contactUsOnTelegram": "Contáctanos directamente en Telegram",
+      "googleCalendarDescription": "Programa una reunión con nuestro equipo"
+    },
+    "contactForm": {
+      "title": "Trabajemos juntos",
+      "description": "Cuéntanos sobre tu negocio y te proporcionaremos soluciones de pago personalizadas",
+      "success": "¡Consulta Enviada Exitosamente!",
+      "successDescription": "¡Gracias! Te contactaremos dentro de 24 horas.",
+      "error": "Error en el Envío",
+      "errorDescription": "Hubo un error al enviar tu consulta. Por favor intenta nuevamente o contáctanos directamente.",
+      "contactName": "Nombre de Contacto",
+      "contactEmail": "Email de Contacto",
+      "telegramWhatsapp": "Telegram/WhatsApp",
+      "websiteUrl": "URL del Sitio Web",
+      "licenseInformation": "Información de Licencia",
+      "targetCountries": "Países Objetivo",
+      "monthlyVolume": "Volumen Mensual",
+      "selectMonthlyVolume": "Seleccionar volumen mensual",
+      "yearsOfOperation": "Años de Operación",
+      "selectYears": "Seleccionar años",
+      "startup": "Startup (Menos de 1 año)",
+      "servicesInterested": "Servicios en los que Estás Interesado",
+      "servicesInterestedPlaceholder": "Por favor describe las soluciones de pago que necesitas...",
+      "submitInquiry": "Enviar Consulta",
+      "submitting": "Enviando...",
+      "submittingDescription": "Por favor espera mientras procesamos tu consulta."
+    },
+    "services": {
+      "title": "¿Por Qué Elegirnos?",
+      "description_1": "Nos especializamos en conectar Comerciantes con Proveedores confiables. Con nuestros años de experiencia y red global, podemos emparejarte con los socios correctos para ayudar a tu negocio a operar sin problemas y crecer.",
+      "description_2": "Nuestro enfoque está construido sobre ",
+      "transparencyTrustReliability": "transparencia, confianza y confiabilidad",
+      "description_3": " Escuchamos tus necesidades, encontramos soluciones personalizadas para aumentar tus tasas de aprobación y aseguramos que tus clientes tengan acceso a las opciones de pago que esperan.",
+      "cardProcessingAcquiring": "Procesamiento de Tarjetas / Acquiring",
+      "cardProcessingAcquiringDescription": "Cobertura global para el procesamiento de Visa y Mastercard. Examinamos tu portafolio actual y sugerimos formas de mejorar tus tasas de aprobación y expandir tu cobertura geográfica.",
+      "bankingSolutions": "Soluciones Bancarias",
+      "bankingSolutionsDescription": "Apertura de Cuentas Bancarias para Comerciantes licenciados onshore y offshore globalmente.",
+      "bankingSolutionsBulletPoints": ["B2B", "C2B", "B2C"],
+      "alternativePaymentMethods": "Métodos de Pago Alternativos (APMs)",
+      "alternativePaymentMethodsDescription": "Mantenemos un amplio portafolio de métodos de pago locales dentro de Europa, Asia, África, LATAM y Oceanía adaptados a tus necesidades.",
+      "onAndOffRampServices": "Servicios On y Off Ramp",
+      "onAndOffRampServicesDescription": "Mesas OTC que tienen rieles para cubrir conversiones de más de 20 monedas.",
+      "onAndOffRampServicesBulletPoints": [
+        "Liquidaciones Diarias",
+        "On Ramp",
+        "Off Ramp",
+        "Gerente de Cuenta dedicado 24/7"
+      ],
+      "licensing": "Licenciamiento",
+      "licensingDescription": "También ayudamos con la obtención de licencias en múltiples jurisdicciones. Si eres una startup o un negocio establecido que busca expandir tu negocio en nuevas regiones, podemos facilitar y ayudar en tu crecimiento."
+    },
+    "footer": {
+      "disclaimer": "Descargo de Responsabilidad",
+      "disclaimerDescription": "no es una institución de pago, institución financiera o banco que mantenga fondos de clientes. Somos estrictamente una Consultoría que te conecta con instituciones reguladas responsables de tus fondos. No asumimos ni mantenemos ninguna responsabilidad en caso de pérdida de fondos.",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "cookiePolicy": "Política de Cookies",
+      "allRightsReserved": "Todos los derechos reservados.",
+      "supportEmail": "support@keyconnections.io"
     }
+  }
 }

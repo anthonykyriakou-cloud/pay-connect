@@ -7,7 +7,7 @@ const CalendarIntegration = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="book-consultation" className="py-24 bg-background">
+    <section id="book-consultation" className="bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl font-bold">{t('app.calendarBooking.title')}</h2>
