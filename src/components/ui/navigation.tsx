@@ -33,11 +33,15 @@ export function Navigation({ className }: NavigationProps) {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-black"><KeyLogo className="rotate-90" size={32} /></span>
+          <div className="flex items-center gap-1">
+            <div className="flex-shrink-0 h-8 w-auto flex items-center justify-center overflow-hidden mt-2">
+              <img 
+                src="/logo.svg" 
+                alt="Logo" 
+                className="h-full w-auto max-w-[120px] object-contain object-center" 
+              />
             </div>
-            <span className="text-xl font-bold text-foreground">
+            <span className="text-md font-bold text-foreground">
               {t("app.name")}
             </span>
           </div>
@@ -57,8 +61,8 @@ export function Navigation({ className }: NavigationProps) {
               </a>
             ))}
             <ScrollIntoView selector="#book-consultation">
-              <Button variant="payment" className="font-semibold" onClick={onBookConsultation}>
-                📞 {t('app.navigation.bookConsultation')}
+              <Button size="sm" variant="payment" className="font-semibold" onClick={onBookConsultation}>
+                {t('app.navigation.bookConsultation')}
               </Button>
             </ScrollIntoView>
           </div>
@@ -109,11 +113,12 @@ export function Navigation({ className }: NavigationProps) {
               ))}
               <ScrollIntoView selector="#book-consultation">
                 <Button
+                  size="sm"
                   variant="payment"
                   className="w-full font-semibold"
                   onClick={onBookConsultation}
                 >
-                  📞 {t("app.navigation.bookConsultation")}
+                  {t("app.navigation.bookConsultation")}
                 </Button>
               </ScrollIntoView>
             </div>
