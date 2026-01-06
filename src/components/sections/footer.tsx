@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import TelegramIcon from "@/assets/telegram.svg";
 
 export function Footer() {
@@ -42,12 +43,12 @@ export function Footer() {
             © {new Date().getFullYear()} {t("app.name")}. {t('app.footer.allRightsReserved')}
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground mt-4 md:mt-0">            
-            <a
-              href="/cookie-policy"
+            <Link
+              to="/cookie-policy"
               className="hover:text-foreground transition-colors"
             >
               {t('app.footer.cookiePolicy')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
