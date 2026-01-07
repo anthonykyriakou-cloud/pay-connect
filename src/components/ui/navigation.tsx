@@ -41,7 +41,7 @@ export function Navigation({ className }: NavigationProps) {
                 className="h-full w-auto max-w-[120px] object-contain object-center" 
               />
             </div>
-            <span className="text-md font-bold text-foreground text-[#DAA520]">
+            <span className="text-md font-bold text-foreground">
               KeyConnections
             </span>
           </div>
