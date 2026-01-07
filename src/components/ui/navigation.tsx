@@ -42,7 +42,7 @@ export function Navigation({ className }: NavigationProps) {
               />
             </div>
             <span className="text-md font-bold text-foreground">
-              {t("app.name")}
+              Key<span className="text-[#DAA520]">Connections</span>
             </span>
           </div>
 
