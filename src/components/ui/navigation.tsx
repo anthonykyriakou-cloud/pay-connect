@@ -10,14 +10,22 @@ interface NavigationProps {
   className?: string;
 }
 
+type RouteNavItem = { href: string; label: string; isRoute: true };
+type ScrollNavItem = { selector: string; label: string; isRoute: false };
+type NavItem = RouteNavItem | ScrollNavItem;
+
+function isRouteNavItem(item: NavItem): item is RouteNavItem {
+  return item.isRoute === true;
+}
+
 export function Navigation({ className }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
 
-  const navItems = [
-    { href: "/", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#book-consultation", label: "Contact" },
+  const navItems: NavItem[] = [
+    { href: "/", label: "Home", isRoute: true },
+    { selector: "#services", label: "Services", isRoute: false },
+    { selector: "#book-consultation", label: "Contact", isRoute: false },
   ];
 
   const onBookConsultation = () => {
@@ -51,15 +59,28 @@ export function Navigation({ className }: NavigationProps) {
               <LanguageSwitcher />
             </div>
 
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              if (isRouteNavItem(item)) {
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
+              return (
+                <ScrollIntoView key={item.selector} selector={item.selector}>
+                  <button
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
+                </ScrollIntoView>
+              );
+            })}
             <ScrollIntoView selector="#book-consultation">
               <Button size="sm" variant="payment" className="font-semibold" onClick={onBookConsultation}>
                 {t('app.navigation.bookConsultation')}
@@ -101,16 +122,30 @@ export function Navigation({ className }: NavigationProps) {
                 <LanguageSwitcher />
               </div>
 
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="block text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                if (isRouteNavItem(item)) {
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="block text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                return (
+                  <ScrollIntoView key={item.selector} selector={item.selector}>
+                    <button
+                      className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </button>
+                  </ScrollIntoView>
+                );
+              })}
               <ScrollIntoView selector="#book-consultation">
                 <Button
                   size="sm"
